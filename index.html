@@ -7,8 +7,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=MedievalSharp&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-dark: #1b1a25;
-      --bg-light: #2a2838;
+      --bg-dark: #0d0b16;
+      --bg-light: #1c1a27;
       --accent: #f0c75e;
       --accent2: #8ecae6;
       --text-light: #eee;
@@ -29,47 +29,58 @@
       line-height: 1.7;
     }
 
-    /* Navbar */
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(20, 20, 30, 0.95);
-      padding: 1rem;
-      text-align: center;
-      border-bottom: 2px solid var(--accent);
-      z-index: 1000;
-    }
-
-    nav a {
-      color: var(--accent);
-      text-decoration: none;
-      margin: 0 1.5rem;
-      font-weight: bold;
-      font-family: 'MedievalSharp', cursive;
-      font-size: 1.1rem;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: var(--accent2);
-    }
-
-    /* Sections */
+    /* Backgrounds for fantasy feel */
     section {
+      position: relative;
       min-height: 100vh;
       padding: 6rem 2rem 4rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      background: var(--bg-light);
-      border-bottom: 2px solid #333;
       text-align: center;
+      overflow: hidden;
     }
 
-    section:nth-child(even) {
-      background: var(--bg-dark);
+    section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0.25;
+      z-index: 0;
+    }
+
+    #home::before {
+      background-image: url("https://www.transparenttextures.com/patterns/stardust.png"),
+                        linear-gradient(to bottom, #1a1630, #0d0b16);
+      opacity: 0.4;
+    }
+
+    #about::before {
+      background-image: url("https://www.transparenttextures.com/patterns/aged-paper.png"),
+                        linear-gradient(to bottom, #2d2617, #1c1a27);
+    }
+
+    #skills::before {
+      background-image: url("https://www.transparenttextures.com/patterns/arches.png"),
+                        linear-gradient(to bottom, #1c2733, #0d1a22);
+    }
+
+    #projects::before {
+      background-image: url("https://www.transparenttextures.com/patterns/stone-wall.png"),
+                        linear-gradient(to bottom, #29221d, #0d0b16);
+    }
+
+    #contact::before {
+      background-image: url("https://www.transparenttextures.com/patterns/parchment.png"),
+                        linear-gradient(to bottom, #3d3526, #1c1a27);
+    }
+
+    section > * {
+      position: relative;
+      z-index: 1;
     }
 
     h1, h2 {
@@ -95,6 +106,32 @@
       color: var(--text-dim);
     }
 
+    /* Navbar */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(10, 10, 20, 0.95);
+      padding: 1rem;
+      text-align: center;
+      border-bottom: 2px solid var(--accent);
+      z-index: 1000;
+    }
+
+    nav a {
+      color: var(--accent);
+      text-decoration: none;
+      margin: 0 1.5rem;
+      font-weight: bold;
+      font-family: 'MedievalSharp', cursive;
+      font-size: 1.1rem;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--accent2);
+    }
+
     /* Skills */
     .skills-list {
       list-style: none;
@@ -105,13 +142,14 @@
     }
 
     .skills-list li {
-      background: #322f47;
+      background: rgba(50,47,71,0.8);
       border: 1px solid var(--accent);
       color: var(--accent);
       margin: .5rem;
       padding: .7rem 1.2rem;
       border-radius: 8px;
       font-family: 'MedievalSharp', cursive;
+      box-shadow: 0 0 10px rgba(240,199,94,0.4);
     }
 
     /* Projects */
@@ -119,10 +157,10 @@
       max-width: 600px;
       margin: 1rem 0;
       padding: 1rem;
-      background: #252334;
+      background: rgba(25, 20, 30, 0.9);
       border: 2px solid var(--accent2);
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(142,202,230,0.4);
+      box-shadow: 0 0 15px rgba(142,202,230,0.4);
       text-align: left;
     }
 
@@ -161,7 +199,7 @@
     <a href="#about">📜 Tale</a>
     <a href="#skills">⚔️ Skills</a>
     <a href="#projects">🗡️ Quests</a>
-    <a href="#contact">📬 Contact</a>
+    <a href="#contact">📬 Raven</a>
   </nav>
 
   <!-- Home -->
@@ -177,8 +215,6 @@
       From the land of code and creativity, I embarked on a journey over 13 years ago. 
       Along the way I mastered Unity, explored the magic of Unreal Engine, 
       and forged systems that brought worlds to life.  
-      I have built mobile realms, VR adventures, and PC epics — 
-      guiding teams as a technical leader and architect.  
     </p>
   </section>
 
