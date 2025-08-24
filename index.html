@@ -29,7 +29,6 @@
       line-height: 1.7;
     }
 
-    /* Backgrounds for fantasy feel */
     section {
       position: relative;
       min-height: 100vh;
@@ -52,15 +51,10 @@
       z-index: 0;
     }
 
-    #home::before {
+    #intro::before {
       background-image: url("https://www.transparenttextures.com/patterns/stardust.png"),
                         linear-gradient(to bottom, #1a1630, #0d0b16);
       opacity: 0.4;
-    }
-
-    #about::before {
-      background-image: url("https://www.transparenttextures.com/patterns/aged-paper.png"),
-                        linear-gradient(to bottom, #2d2617, #1c1a27);
     }
 
     #skills::before {
@@ -106,7 +100,6 @@
       color: var(--text-dim);
     }
 
-    /* Navbar */
     nav {
       position: fixed;
       top: 0;
@@ -130,6 +123,24 @@
 
     nav a:hover {
       color: var(--accent2);
+    }
+
+    /* Intro Section Layout */
+    .intro-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .intro-wrapper img {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      border: 4px solid var(--accent);
+      box-shadow: 0 0 20px rgba(240,199,94,0.5);
+      object-fit: cover;
+      background: #222;
     }
 
     /* Skills */
@@ -180,7 +191,6 @@
       color: var(--accent2);
     }
 
-    /* Footer */
     footer {
       background: #111;
       text-align: center;
@@ -195,27 +205,27 @@
 
   <!-- Navigation -->
   <nav>
-    <a href="#home">🏰 Home</a>
-    <a href="#about">📜 Tale</a>
+    <a href="#intro">🏰 Introduction</a>
     <a href="#skills">⚔️ Skills</a>
     <a href="#projects">🗡️ Quests</a>
     <a href="#contact">📬 Raven</a>
   </nav>
 
-  <!-- Home -->
-  <section id="home">
-    <h1>Kamran Basharkhah</h1>
-    <p>Game Developer • Unity & Unreal • Architect of Digital Worlds</p>
-  </section>
-
-  <!-- About -->
-  <section id="about">
-    <h2>The Hero’s Tale</h2>
-    <p>
-      From the land of code and creativity, I embarked on a journey over 13 years ago. 
-      Along the way I mastered Unity, explored the magic of Unreal Engine, 
-      and forged systems that brought worlds to life.  
-    </p>
+  <!-- Intro (merged Home + Tale) -->
+  <section id="intro">
+    <div class="intro-wrapper">
+      <img src="me1.jpg" alt="Portrait of Kamran Basharkhah">
+      <div>
+        <h1>Kamran Basharkhah</h1>
+        <p>Game Developer • Unity & Unreal • Architect of Digital Worlds</p>
+        <h2>The Hero’s Tale</h2>
+        <p>
+          From the land of code and creativity, I embarked on a journey over 13 years ago.  
+          Along the way I mastered Unity, explored the magic of Unreal Engine,  
+          and forged systems that brought worlds to life.  
+        </p>
+      </div>
+    </div>
   </section>
 
   <!-- Skills -->
