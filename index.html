@@ -3,14 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kamran Basharkhah - Portfolio</title>
+  <title>Kamran Basharkhah - Heroic Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=MedievalSharp&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #111;
-      --secondary: #444;
-      --accent: #0077ff;
-      --bg: #f8f9fa;
-      --text: #333;
+      --bg-dark: #1b1a25;
+      --bg-light: #2a2838;
+      --accent: #f0c75e;
+      --accent2: #8ecae6;
+      --text-light: #eee;
+      --text-dim: #bbb;
     }
 
     * {
@@ -21,57 +23,79 @@
     }
 
     body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      background: var(--bg);
-      color: var(--text);
+      font-family: 'Cinzel', serif;
+      background: var(--bg-dark);
+      color: var(--text-light);
+      line-height: 1.7;
     }
 
     /* Navbar */
     nav {
       position: fixed;
       top: 0;
-      left: 0;
       width: 100%;
-      background: var(--primary);
-      color: white;
-      display: flex;
-      justify-content: center;
+      background: rgba(20, 20, 30, 0.95);
       padding: 1rem;
+      text-align: center;
+      border-bottom: 2px solid var(--accent);
       z-index: 1000;
     }
 
     nav a {
-      color: white;
+      color: var(--accent);
       text-decoration: none;
-      margin: 0 1rem;
+      margin: 0 1.5rem;
       font-weight: bold;
+      font-family: 'MedievalSharp', cursive;
+      font-size: 1.1rem;
       transition: color 0.3s;
     }
 
     nav a:hover {
-      color: var(--accent);
+      color: var(--accent2);
     }
 
     /* Sections */
     section {
       min-height: 100vh;
-      padding: 5rem 2rem;
+      padding: 6rem 2rem 4rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-    }
-
-    section:nth-child(even) {
-      background: white;
-    }
-
-    h1, h2 {
-      margin-bottom: 1rem;
+      background: var(--bg-light);
+      border-bottom: 2px solid #333;
       text-align: center;
     }
 
+    section:nth-child(even) {
+      background: var(--bg-dark);
+    }
+
+    h1, h2 {
+      color: var(--accent);
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 5px black;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+      border-bottom: 2px dashed var(--accent);
+      padding-bottom: .5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    p {
+      max-width: 700px;
+      margin: 0 auto 1.5rem;
+      color: var(--text-dim);
+    }
+
+    /* Skills */
     .skills-list {
       list-style: none;
       display: flex;
@@ -81,28 +105,51 @@
     }
 
     .skills-list li {
-      background: var(--secondary);
-      color: white;
+      background: #322f47;
+      border: 1px solid var(--accent);
+      color: var(--accent);
       margin: .5rem;
       padding: .7rem 1.2rem;
-      border-radius: 20px;
+      border-radius: 8px;
+      font-family: 'MedievalSharp', cursive;
     }
 
+    /* Projects */
     .project {
       max-width: 600px;
       margin: 1rem 0;
       padding: 1rem;
-      border: 1px solid #ddd;
+      background: #252334;
+      border: 2px solid var(--accent2);
       border-radius: 10px;
-      background: #fff;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      box-shadow: 0 0 10px rgba(142,202,230,0.4);
+      text-align: left;
     }
 
+    .project h3 {
+      margin-bottom: .5rem;
+      color: var(--accent2);
+    }
+
+    /* Contact */
+    .contact a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .contact a:hover {
+      color: var(--accent2);
+    }
+
+    /* Footer */
     footer {
-      background: var(--primary);
-      color: #aaa;
+      background: #111;
       text-align: center;
       padding: 1rem;
+      color: var(--text-dim);
+      font-family: 'MedievalSharp', cursive;
+      border-top: 2px solid var(--accent);
     }
   </style>
 </head>
@@ -110,69 +157,71 @@
 
   <!-- Navigation -->
   <nav>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
+    <a href="#home">🏰 Home</a>
+    <a href="#about">📜 Tale</a>
+    <a href="#skills">⚔️ Skills</a>
+    <a href="#projects">🗡️ Quests</a>
+    <a href="#contact">📬 Contact</a>
   </nav>
 
   <!-- Home -->
   <section id="home">
     <h1>Kamran Basharkhah</h1>
-    <p>Senior Game Developer | Unity & Unreal | Technical Lead</p>
+    <p>Game Developer • Unity & Unreal • Architect of Digital Worlds</p>
   </section>
 
   <!-- About -->
   <section id="about">
-    <h2>About Me</h2>
-    <p style="max-width:700px; text-align:center;">
-      I’m an experienced game developer with over 13 years in the industry.
-      Specialized in Unity and Unreal Engine with a strong focus on
-      architecture, system design, and technical leadership.
+    <h2>The Hero’s Tale</h2>
+    <p>
+      From the land of code and creativity, I embarked on a journey over 13 years ago. 
+      Along the way I mastered Unity, explored the magic of Unreal Engine, 
+      and forged systems that brought worlds to life.  
+      I have built mobile realms, VR adventures, and PC epics — 
+      guiding teams as a technical leader and architect.  
     </p>
   </section>
 
   <!-- Skills -->
   <section id="skills">
-    <h2>Skills</h2>
+    <h2>Skills & Powers</h2>
     <ul class="skills-list">
       <li>Unity (C#)</li>
       <li>Unreal Engine (Blueprints)</li>
       <li>Game Architecture</li>
       <li>System Design</li>
-      <li>VR / AR Development</li>
-      <li>Technical Leadership</li>
+      <li>VR / AR Enchantments</li>
+      <li>Leadership & Strategy</li>
     </ul>
   </section>
 
   <!-- Projects -->
   <section id="projects">
-    <h2>Projects</h2>
+    <h2>Quests & Adventures</h2>
     <div class="project">
-      <h3>Procedural Buildings (Houdini + Unreal)</h3>
-      <p>Procedural generation pipeline bringing Houdini-created buildings into Unreal Engine for interactive use.</p>
+      <h3>🏗️ Procedural Buildings</h3>
+      <p>Harnessed Houdini’s powers to conjure procedural architecture and port it into Unreal realms.</p>
     </div>
     <div class="project">
-      <h3>3D Runner Prototype</h3>
-      <p>A war-supply runner game with lane-based dodging mechanics, power-ups, and AI teammates.</p>
+      <h3>🏃 The Runner’s Trial</h3>
+      <p>A perilous 3D runner — dodging mines, bombs, and foes while delivering sacred supplies to allies.</p>
     </div>
     <div class="project">
-      <h3>Mobile & VR Experiences</h3>
-      <p>Shipped Unity titles including VR training apps, mobile casual games, and PC demos.</p>
+      <h3>🎮 Realms in VR</h3>
+      <p>Forged immersive VR experiences, mobile quests, and PC worlds — bringing players into new dimensions.</p>
     </div>
   </section>
 
   <!-- Contact -->
-  <section id="contact">
-    <h2>Contact</h2>
+  <section id="contact" class="contact">
+    <h2>Send a Raven</h2>
     <p>Email: <a href="mailto:kamran@example.com">kamran@example.com</a></p>
     <p>LinkedIn: <a href="#">linkedin.com/in/kamranbasharkhah</a></p>
     <p>GitHub: <a href="#">github.com/kamranbasharkhah</a></p>
   </section>
 
   <footer>
-    <p>© 2025 Kamran Basharkhah — Portfolio</p>
+    <p>⚔️ Crafted with code & magic — 2025 Kamran Basharkhah ⚔️</p>
   </footer>
 
 </body>
