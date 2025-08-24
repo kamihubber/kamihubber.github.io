@@ -3,155 +3,177 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kamran Basharkhah - Game Developer Portfolio</title>
+  <title>Kamran Basharkhah - Portfolio</title>
   <style>
+    :root {
+      --primary: #111;
+      --secondary: #444;
+      --accent: #0077ff;
+      --bg: #f8f9fa;
+      --text: #333;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: Arial, sans-serif;
-      margin: 0;
-      background: #f8f9fa;
-      color: #333;
       line-height: 1.6;
+      background: var(--bg);
+      color: var(--text);
     }
-    header {
-      background: #111;
-      color: #fff;
-      padding: 2rem;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-    header p {
-      font-size: 1.2rem;
-      margin-top: .5rem;
-    }
+
+    /* Navbar */
     nav {
-      background: #222;
-      padding: .5rem;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: var(--primary);
+      color: white;
+      display: flex;
+      justify-content: center;
+      padding: 1rem;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    /* Sections */
+    section {
+      min-height: 100vh;
+      padding: 5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    section:nth-child(even) {
+      background: white;
+    }
+
+    h1, h2 {
+      margin-bottom: 1rem;
       text-align: center;
     }
-    nav a {
-      color: #fff;
-      margin: 0 1rem;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .container {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-    section {
-      margin-bottom: 3rem;
-    }
-    h2 {
-      border-bottom: 2px solid #ddd;
-      padding-bottom: .5rem;
-      margin-bottom: 1rem;
-      font-size: 1.8rem;
-      color: #222;
-    }
-    .skills-list, .contact-list {
+
+    .skills-list {
       list-style: none;
-      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 1rem;
     }
-    .skills-list li, .contact-list li {
-      background: #eee;
-      display: inline-block;
-      margin: .3rem;
-      padding: .5rem 1rem;
+
+    .skills-list li {
+      background: var(--secondary);
+      color: white;
+      margin: .5rem;
+      padding: .7rem 1.2rem;
       border-radius: 20px;
     }
+
     .project {
-      margin-bottom: 1.5rem;
+      max-width: 600px;
+      margin: 1rem 0;
       padding: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 10px;
       background: #fff;
-      border-radius: 8px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
-    .project h3 {
-      margin-top: 0;
-    }
+
     footer {
-      background: #111;
+      background: var(--primary);
       color: #aaa;
       text-align: center;
       padding: 1rem;
-      margin-top: 2rem;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Kamran Basharkhah</h1>
-    <p>Senior Game Developer | Unity & Unreal | Technical Lead</p>
-  </header>
 
+  <!-- Navigation -->
   <nav>
+    <a href="#home">Home</a>
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
   </nav>
 
-  <div class="container">
-    <section id="about">
-      <h2>About Me</h2>
-      <p>
-        I’m an experienced game developer with over 13 years in the industry. 
-        I specialize in Unity (C#) and Unreal Engine (Blueprints), with a strong focus 
-        on architecture, system design, and technical leadership. 
-        I’ve built mobile games, VR experiences, and PC titles.  
-      </p>
-    </section>
+  <!-- Home -->
+  <section id="home">
+    <h1>Kamran Basharkhah</h1>
+    <p>Senior Game Developer | Unity & Unreal | Technical Lead</p>
+  </section>
 
-    <section id="skills">
-      <h2>Skills</h2>
-      <ul class="skills-list">
-        <li>Unity (C#)</li>
-        <li>Unreal Engine (Blueprints)</li>
-        <li>Game Architecture & ECS</li>
-        <li>System Design & Documentation</li>
-        <li>VR / AR Development</li>
-        <li>Team Leadership</li>
-      </ul>
-    </section>
+  <!-- About -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p style="max-width:700px; text-align:center;">
+      I’m an experienced game developer with over 13 years in the industry.
+      Specialized in Unity and Unreal Engine with a strong focus on
+      architecture, system design, and technical leadership.
+    </p>
+  </section>
 
-    <section id="projects">
-      <h2>Projects</h2>
-      <div class="project">
-        <h3>Procedural Buildings (Houdini + Unreal)</h3>
-        <p>
-          A system to generate procedural buildings in Houdini and integrate them into Unreal Engine for interactive experiences.
-        </p>
-      </div>
-      <div class="project">
-        <h3>Runner Game Prototype</h3>
-        <p>
-          A 3D runner where players deliver supplies while dodging mines, bombs, and enemies, with power-ups like shields and bomb predictors.
-        </p>
-      </div>
-      <div class="project">
-        <h3>Mobile & VR Experiences</h3>
-        <p>
-          Shipped multiple Unity-based titles including VR training apps, mobile casual games, and PC demos.
-        </p>
-      </div>
-    </section>
+  <!-- Skills -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul class="skills-list">
+      <li>Unity (C#)</li>
+      <li>Unreal Engine (Blueprints)</li>
+      <li>Game Architecture</li>
+      <li>System Design</li>
+      <li>VR / AR Development</li>
+      <li>Technical Leadership</li>
+    </ul>
+  </section>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <ul class="contact-list">
-        <li>Email: <a href="mailto:kamran@example.com">kamran@example.com</a></li>
-        <li>LinkedIn: <a href="#">linkedin.com/in/kamran-basharkhah</a></li>
-        <li>GitHub: <a href="#">github.com/kamranbasharkhah</a></li>
-      </ul>
-    </section>
-  </div>
+  <!-- Projects -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project">
+      <h3>Procedural Buildings (Houdini + Unreal)</h3>
+      <p>Procedural generation pipeline bringing Houdini-created buildings into Unreal Engine for interactive use.</p>
+    </div>
+    <div class="project">
+      <h3>3D Runner Prototype</h3>
+      <p>A war-supply runner game with lane-based dodging mechanics, power-ups, and AI teammates.</p>
+    </div>
+    <div class="project">
+      <h3>Mobile & VR Experiences</h3>
+      <p>Shipped Unity titles including VR training apps, mobile casual games, and PC demos.</p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:kamran@example.com">kamran@example.com</a></p>
+    <p>LinkedIn: <a href="#">linkedin.com/in/kamranbasharkhah</a></p>
+    <p>GitHub: <a href="#">github.com/kamranbasharkhah</a></p>
+  </section>
 
   <footer>
     <p>© 2025 Kamran Basharkhah — Portfolio</p>
   </footer>
+
 </body>
 </html>
