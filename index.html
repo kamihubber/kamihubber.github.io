@@ -1,256 +1,274 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kamran Basharkhah - Game Developer Portfolio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        header {
-            background-color: #001f3f;
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-        header p {
-            font-size: 1.2em;
-            margin-top: 10px;
-        }
-        section {
-            background: white;
-            margin: 20px 0;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        h2 {
-            color: #001f3f;
-            border-bottom: 2px solid #001f3f;
-            padding-bottom: 10px;
-        }
-        ul {
-            list-style-type: disc;
-            padding-left: 20px;
-        }
-        .contact-info {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-        }
-        .contact-item {
-            margin: 10px;
-        }
-        .experience-item, .project-item {
-            margin-bottom: 20px;
-        }
-        .experience-item h3 {
-            margin: 0;
-            font-size: 1.2em;
-        }
-        .experience-item p {
-            margin: 5px 0;
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #001f3f;
-            color: white;
-        }
-        @media (max-width: 768px) {
-            header {
-                padding: 20px;
-            }
-            .container {
-                padding: 10px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kamran Basharkhah - Heroic Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=MedievalSharp&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0d0b16;
+      --bg-light: #1c1a27;
+      --accent: #f0c75e;
+      --accent2: #8ecae6;
+      --text-light: #eee;
+      --text-dim: #bbb;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Cinzel', serif;
+      background: var(--bg-dark);
+      color: var(--text-light);
+      line-height: 1.7;
+    }
+
+    section {
+      position: relative;
+      min-height: 100vh;
+      padding: 6rem 2rem 4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0.25;
+      z-index: 0;
+    }
+
+    #intro::before {
+      background-image: url("https://www.transparenttextures.com/patterns/stardust.png"),
+                        linear-gradient(to bottom, #1a1630, #0d0b16);
+      opacity: 0.4;
+    }
+
+    #skills::before {
+      background-image: url("https://www.transparenttextures.com/patterns/arches.png"),
+                        linear-gradient(to bottom, #1c2733, #0d1a22);
+    }
+
+    #projects::before {
+      background-image: url("https://www.transparenttextures.com/patterns/stone-wall.png"),
+                        linear-gradient(to bottom, #29221d, #0d0b16);
+    }
+
+    #contact::before {
+      background-image: url("https://www.transparenttextures.com/patterns/parchment.png"),
+                        linear-gradient(to bottom, #3d3526, #1c1a27);
+    }
+
+    section > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    h1, h2 {
+      color: var(--accent);
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 5px black;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+      border-bottom: 2px dashed var(--accent);
+      padding-bottom: .5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    p {
+      max-width: 700px;
+      margin: 0 auto 1.5rem;
+      color: var(--text-dim);
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(10, 10, 20, 0.95);
+      padding: 1rem;
+      text-align: center;
+      border-bottom: 2px solid var(--accent);
+      z-index: 1000;
+    }
+
+    nav a {
+      color: var(--accent);
+      text-decoration: none;
+      margin: 0 1.5rem;
+      font-weight: bold;
+      font-family: 'MedievalSharp', cursive;
+      font-size: 1.1rem;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--accent2);
+    }
+
+    /* Intro Section Layout */
+    .intro-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .intro-wrapper img {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      border: 4px solid var(--accent);
+      box-shadow: 0 0 20px rgba(240,199,94,0.5);
+      object-fit: cover;
+      background: #222;
+    }
+
+    /* Skills */
+    .skills-list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+
+    .skills-list li {
+      background: rgba(50,47,71,0.8);
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      margin: .5rem;
+      padding: .7rem 1.2rem;
+      border-radius: 8px;
+      font-family: 'MedievalSharp', cursive;
+      box-shadow: 0 0 10px rgba(240,199,94,0.4);
+    }
+
+    /* Projects */
+    .project {
+      max-width: 600px;
+      margin: 1rem 0;
+      padding: 1rem;
+      background: rgba(25, 20, 30, 0.9);
+      border: 2px solid var(--accent2);
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(142,202,230,0.4);
+      text-align: left;
+    }
+
+    .project h3 {
+      margin-bottom: .5rem;
+      color: var(--accent2);
+    }
+
+    /* Contact */
+    .contact a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .contact a:hover {
+      color: var(--accent2);
+    }
+
+    footer {
+      background: #111;
+      text-align: center;
+      padding: 1rem;
+      color: var(--text-dim);
+      font-family: 'MedievalSharp', cursive;
+      border-top: 2px solid var(--accent);
+    }
+  </style>
 </head>
 <body>
-    <header>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#intro">🏰 Introduction</a>
+    <a href="#skills">⚔️ Skills</a>
+    <a href="#projects">🗡️ Quests</a>
+    <a href="#contact">📬 Raven</a>
+  </nav>
+
+  <!-- Intro (merged Home + Tale) -->
+  <section id="intro">
+    <div class="intro-wrapper">
+      <img src="me1.jpg" alt="Portrait of Kamran Basharkhah">
+      <div>
         <h1>Kamran Basharkhah</h1>
-        <p>GAME DEVELOPER</p>
-        <p>Experienced Game Developer with 13 years of work in different positions and great skills in problem solving. I create great code structure based on professional initial design and detailed documentation. I have built mobile games, VR experiences and PC games.</p>
-    </header>
-    
-    <div class="container">
-        <section id="contact">
-            <h2>Contact</h2>
-            <div class="contact-info">
-                <div class="contact-item">Phone: +989119324373</div>
-                <div class="contact-item">Email: giomri@gmail.com</div>
-                <div class="contact-item">LinkedIn: <a href="https://linkedin.com/in/freemindkamran/" target="_blank">linkedin.com/in/freemindkamran/</a></div>
-                <div class="contact-item">Address: Tehran, Iran</div>
-            </div>
-        </section>
-        
-        <section id="education">
-            <h2>Education</h2>
-            <ul>
-                <li>2004 - Diploma, High School</li>
-                <li>2010 - Associate in Applied Math, Payame Noor University</li>
-            </ul>
-        </section>
-        
-        <section id="expertise">
-            <h2>Expertise</h2>
-            <ul>
-                <li>C++, C#</li>
-                <li>Unity, Unreal Engine, Game Maker</li>
-                <li>SQL Server</li>
-                <li>Asp.net</li>
-                <li>Git, Jira, Trello</li>
-                <li>Test & Debug</li>
-                <li>Team player, flexible</li>
-            </ul>
-        </section>
-        
-        <section id="languages">
-            <h2>Languages</h2>
-            <ul>
-                <li>Persian</li>
-                <li>English</li>
-            </ul>
-        </section>
-        
-        <section id="experience">
-            <h2>Experience</h2>
-            <div class="experience-item">
-                <h3>Senior Unity Developer - Hooran Games</h3>
-                <p>September 2024 - Present</p>
-                <ul>
-                    <li>Prepared code design and architecture for game system</li>
-                    <li>Created Technical Design Documents for games</li>
-                    <li>Implemented game meta layers like tutorial system for "Gomanchi" game.</li>
-                    <li>Worked on game monetization systems for "Gomanchi" game.</li>
-                    <li>Participated in code review meetings to refactor codebase</li>
-                </ul>
-            </div>
-            <div class="experience-item">
-                <h3>Senior Unity Developer - Medrick Games</h3>
-                <p>September 2023 - September 2024</p>
-                <ul>
-                    <li>Worked as a game developer at "Golmorad" Game, contributing to a game with millions of players and substantial revenues.</li>
-                    <li>Created code designs and diagrams for large-scale live operations events.</li>
-                    <li>Implemented great core game mechanics : Rabbit & Roots</li>
-                    <li>Boosted overall game revenue by designing and implementing dynamic game features.</li>
-                    <li>Actively participated in meetings, providing precise technical analysis and design while helping the team achieve desired goals within intended deadlines.</li>
-                    <li>Conducted regular daily code reviews to maintain code quality.</li>
-                    <li>Maintained continuous communication with team members and managers, striving for maximum performance both in my tasks and for the entire team.</li>
-                </ul>
-            </div>
-            <div class="experience-item">
-                <h3>Senior Unreal Engine Developer - Softconstruct | Yerevan, Armenia Remote</h3>
-                <p>December 2021 - December 2022</p>
-                <ul>
-                    <li>Performed massive Functional testing in Unreal Engine blueprints in order to achieve calculations with highest precision</li>
-                    <li>Improved operations through consistent hard work and dedication.</li>
-                    <li>Created Leaderboard UI using Unreal Engine Widgets Blueprints</li>
-                    <li>Saved noticeable time by Automating cinematic modification in Unreal Engine using Python</li>
-                    <li>Reviewed C++ code of existing game and made changes to troubleshoot game for import in newer Unreal Engine versions</li>
-                    <li>Participated in continuous improvement by generating suggestions, engaging in problem-solving activities to support teamwork.</li>
-                    <li>Created well-designed and extremely optimized game tools and objects using Unreal Engine blueprints and profiler tools</li>
-                    <li>Improved operations through consistent hard work and dedication.</li>
-                    <li>Built & Created rapid Prototype outputs for Windows,Html5,Android in Unreal Engine</li>
-                    <li>Wrote game story plot and created a detailed design document</li>
-                    <li>Performed various game tests and reflecting needed changes in design and document</li>
-                    <li>Prepared technical design and document including game rules design , mechanics , economic system for an android game</li>
-                    <li>Communicated with art, production and programming teams to design innovative game elements and optimize quality for better player experiences.</li>
-                </ul>
-            </div>
-            <div class="experience-item">
-                <h3>Unreal Engine Developer - HappyTech Studio | Anzali, Iran</h3>
-                <p>October 2016 - October 2017</p>
-                <!-- Note: Specific bullets seem merged in PDF, but assuming general role -->
-                <ul>
-                    <li>Participated in continuous improvement by generating suggestions, engaging in problem-solving activities to support teamwork.</li>
-                    <li>Created well-designed and extremely optimized game tools and objects using Unreal Engine blueprints and profiler tools.</li>
-                </ul>
-            </div>
-            <div class="experience-item">
-                <h3>C# Android & Web Developer - GildaTech | Rasht, Iran</h3>
-                <p>July 2018 - July 2020</p>
-                <ul>
-                    <li>Modified C# source code of a Medical 3D Printer Software for new functionalities</li>
-                    <li>Used Python to modify code which was used for calculations</li>
-                    <li>Oversaw back-end development using Asp.net MVC to maintain website integrity.</li>
-                    <li>Wrote backend code for a big educational platform , using C# in Asp.net MVC</li>
-                    <li>Created REST api using asp.net Web API</li>
-                    <li>Ran debugging tools to eliminate flaws and glitches prior to publishing.</li>
-                    <li>Provided security maintenance and patching on website interface to maintain viability after launch.</li>
-                    <li>Wrote SQL code both in SQL Management Studio and C#</li>
-                    <li>Used C# in Xamarin to create Android apps</li>
-                </ul>
-            </div>
-            <div class="experience-item">
-                <h3>Senior Unity Developer, Web Developer - Vandad Studio | Rasht, Iran Remote</h3>
-                <p>August 2020 - November 2021</p>
-                <ul>
-                    <li>Worked hard in different roles and successfully performed various responsibilities to help team to reach predefined goals</li>
-                    <li>Successfully managed an android game project using my scrum mastering & agile method skills</li>
-                    <li>Developed a high rated android game for kids by Unity</li>
-                    <li>Used asp.net to create a web service to dynamically choose proper & unique content based on player progress</li>
-                    <li>Used unit testing with big mock data to achieve maximum speed</li>
-                    <li>Used C# to develop game tools to be used in unity editor</li>
-                </ul>
-            </div>
-            <div class="experience-item">
-                <h3>UDK & Unreal Engine Developer, Team Manager - SadVR | Rasht, Iran</h3>
-                <p>October 2011 - October 2016</p>
-                <ul>
-                    <li>Cultivated professional working relationships with marketing department, other personnel and upper management.</li>
-                    <li>Used UDK Script & Unreal Engine blueprints to develop various game objects based on OOP principals and design patterns for better use in future</li>
-                    <li>Balanced and adjusted gameplay experiences to increase critical and commercial success of product.</li>
-                    <li>Regularly troubleshoot game programming to ensure no mistakes are made.</li>
-                    <li>Managed project requirements and accomplished objectives by self-monitoring progress and promptly solving issues.</li>
-                    <li>Communicated with art, production and programming teams to design innovative game elements and optimize quality for better player experiences.</li>
-                    <li>Created new and exciting game experiences by combining programming technics and artistic creativity like "interactive cinematic" & "animation use in fraction simulation"</li>
-                    <li>Created tools & game objects to automate level design tasks using unreal blueprints</li>
-                    <li>Created PC & mobile UI elements using Unreal Engine Widget blueprints</li>
-                    <li>Worked as project manager to create a VR experience</li>
-                    <li>Maintained cameras , lights and effects in unreal matinee to reach desired cinematics</li>
-                    <li>Programmed interactive VR experiences for steel production line using Unreal Engine blueprints</li>
-                </ul>
-            </div>
-        </section>
-        
-        <section id="projects">
-            <h2>Projects Links</h2>
-            <ul>
-                <li>Medrick: Karting Race Live-Ops</li>
-                <li>Medrick: Rabbit Core Game</li>
-                <li>Medrick: Roots Core Game</li>
-                <li>SoftConstruct: Betting Solutions</li>
-                <li>Pahbaad: Unreal Engine Virtual Exhibition</li>
-                <li>Golbahar: Unity</li>
-                <li>MidCo VR: Unreal Engine</li>
-                <li>Marzbanan: UDK</li>
-                <li>Shooter Defence: Unreal Engine</li>
-                <li>Sidma</li>
-                <li>3DBio</li>
-                <li>Dentist Game: Unity</li>
-            </ul>
-            <p>Note: For Dubai Gaming Visa application, this portfolio highlights 13+ years in game development, focusing on Unity and Unreal Engine expertise in mobile, VR, and PC games.</p>
-        </section>
+        <p>Game Developer • Unity & Unreal • Architect of Digital Worlds</p>
+        <h2>The Hero’s Tale</h2>
+        <p>
+          From the land of code and creativity, I embarked on a journey over 13 years ago.  
+          Along the way I mastered Unity, explored the magic of Unreal Engine,  
+          and forged systems that brought worlds to life.  
+        </p>
+      </div>
     </div>
-    
-    <footer>
-        &copy; 2025 Kamran Basharkhah. All rights reserved.
-    </footer>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <h2>Skills & Powers</h2>
+    <ul class="skills-list">
+      <li>Unity (C#)</li>
+      <li>Unreal Engine (Blueprints)</li>
+      <li>Game Architecture</li>
+      <li>System Design</li>
+      <li>VR / AR Enchantments</li>
+      <li>Leadership & Strategy</li>
+    </ul>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <h2>Quests & Adventures</h2>
+    <div class="project">
+      <h3>🏗️ Procedural Buildings</h3>
+      <p>Harnessed Houdini’s powers to conjure procedural architecture and port it into Unreal realms.</p>
+    </div>
+    <div class="project">
+      <h3>🏃 The Runner’s Trial</h3>
+      <p>A perilous 3D runner — dodging mines, bombs, and foes while delivering sacred supplies to allies.</p>
+    </div>
+    <div class="project">
+      <h3>🎮 Realms in VR</h3>
+      <p>Forged immersive VR experiences, mobile quests, and PC worlds — bringing players into new dimensions.</p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <h2>Send a Raven</h2>
+    <p>Email: <a href="mailto:kamran@example.com">kamran@example.com</a></p>
+    <p>LinkedIn: <a href="#">linkedin.com/in/kamranbasharkhah</a></p>
+    <p>GitHub: <a href="#">github.com/kamranbasharkhah</a></p>
+  </section>
+
+  <footer>
+    <p>⚔️ Crafted with code & magic — 2025 Kamran Basharkhah ⚔️</p>
+  </footer>
+
 </body>
 </html>
