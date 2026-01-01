@@ -71,18 +71,11 @@
         linear-gradient(to bottom, #1c2733, #0d1a22);
     }
 
-    .projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 24px;
-}
-
-@media (min-width: 1024px) {
-  .projects-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
+    #projects::before {
+      background-image:
+        url("https://www.transparenttextures.com/patterns/stone-wall.png"),
+        linear-gradient(to bottom, #29221d, #0d0b16);
+    }
 
     #contact::before {
       background-image:
@@ -303,10 +296,9 @@
   </section>
 
   <!-- Projects -->
- <section id="projects">
-  <h2>Quests & Adventures</h2>
+  <section id="projects">
+    <h2>Quests & Adventures</h2>
 
-  <div class="projects-grid">
     <div class="project">
       <img src="shapeshifter1.PNG" alt="Shapeshifter preview">
       <h3>
@@ -320,7 +312,7 @@
     <div class="project">
       <img src="rabbit1.PNG" alt="Runaway Rabbit preview">
       <h3>
-        <a href="#">
+        <a href="#" target="_blank">
           🐇🥕 Runaway Rabbit Mechanic
         </a>
       </h3>
@@ -331,9 +323,8 @@
       <h3>🏗️ Procedural Buildings</h3>
       <p>Procedural architecture created in Houdini and imported into Unreal Engine.</p>
     </div>
-  </div>
-</section>
 
+  </section>
 
   <!-- Contact -->
   <section id="contact" class="contact">
@@ -349,4 +340,3 @@
 
 </body>
 </html>
-
